@@ -1,6 +1,10 @@
 /**
  * Simple file-based lead storage.
  * In production, swap this out for a real database (Postgres, Supabase, PlanetScale, etc.)
+ *
+ * Note: on serverless hosts (Netlify, Vercel, etc.) the filesystem is read-only outside
+ * of /tmp, so writes here will fail. That's expected — we catch and log rather than
+ * throw, so a storage failure never blocks the contact form's email notification.
  */
 
 import fs from 'fs'
@@ -27,30 +31,47 @@ function ensureFile() {
 }
 
 export function getLeads(): Lead[] {
-  ensureFile()
-  return JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8')) as Lead[]
+  try {
+    ensureFile()
+    return JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8')) as Lead[]
+  } catch (err) {
+    console.warn('Unable to read lead storage (expected on read-only filesystems):', err)
+    return []
+  }
 }
 
 export function saveLead(lead: Omit<Lead, 'id' | 'createdAt' | 'read'>): Lead {
-  ensureFile()
-  const leads = getLeads()
   const newLead: Lead = {
     ...lead,
     id: crypto.randomUUID(),
     createdAt: new Date().toISOString(),
     read: false,
   }
-  leads.unshift(newLead)
-  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8')
+
+  try {
+    ensureFile()
+    const leads = getLeads()
+    leads.unshift(newLead)
+    fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8')
+  } catch (err) {
+    // Don't let storage failures block the email notification — the lead is still
+    // returned below so the contact form succeeds and the email still sends.
+    console.warn('Unable to persist lead (expected on read-only filesystems):', err)
+  }
+
   return newLead
 }
 
 export function markLeadRead(id: string): void {
-  ensureFile()
-  const leads = getLeads()
-  const idx = leads.findIndex((l) => l.id === id)
-  if (idx !== -1) {
-    leads[idx].read = true
-    fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8')
+  try {
+    ensureFile()
+    const leads = getLeads()
+    const idx = leads.findIndex((l) => l.id === id)
+    if (idx !== -1) {
+      leads[idx].read = true
+      fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8')
+    }
+  } catch (err) {
+    console.warn('Unable to update lead storage (expected on read-only filesystems):', err)
   }
 }
