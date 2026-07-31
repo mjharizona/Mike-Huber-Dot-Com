@@ -105,7 +105,7 @@ export default function AboutPage() {
               <li>Advertising Director — Yuma Daily Sun</li>
               <li>VP of Marketing & Sales — Alliance Reservations Network</li>
               <li>Client Services Director — Vertical Measures</li>
-              <li>Guest Lecturer — MBA Marketing Classes (USD Hult & others)</li>
+              <li>Guest Lecturer — MBA Marketing Classes (USD, Hult & others)</li>
               <li>Co-author — <em>The Customer Journey</em></li>
               <li>Speaker — Content Marketing World, Digital Summit, AMA Phoenix, and more</li>
             </ul>
