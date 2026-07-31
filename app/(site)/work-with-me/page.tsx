@@ -193,7 +193,7 @@ export default function WorkWithMePage() {
               quality or your brand&rsquo;s voice. It&rsquo;s a practical, revenue-driving skill
               set I&rsquo;ve been sharpening for years — not hype.
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap items-center gap-2 mb-5">
               {aiIntegrationTags.map((tag) => (
                 <span
                   key={tag}
@@ -203,6 +203,9 @@ export default function WorkWithMePage() {
                 </span>
               ))}
             </div>
+            <Link href="/website-packages" className="btn-gold text-sm">
+              See Website Packages &amp; Pricing →
+            </Link>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

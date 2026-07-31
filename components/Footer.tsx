@@ -1,8 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const footerLinks = [
   { href: '/about',             label: 'About' },
   { href: '/work-with-me',      label: 'Work With Me' },
+  { href: '/website-packages',  label: 'Website Packages' },
   { href: '/speaking',          label: 'Speaking' },
   { href: '/training',          label: 'Training' },
   { href: '/content-marketing', label: 'Books By Mike' },
@@ -18,9 +20,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
           <div className="col-span-1">
-            <p className="text-white font-heading font-bold text-xl mb-3">
-              Mike <span className="text-gold-400">Huber</span>
-            </p>
+            <div className="flex items-center gap-2.5 mb-3">
+              <Image
+                src="/images/logo-mh.png"
+                alt="Mike Huber"
+                width={40}
+                height={36}
+                className="h-9 w-auto rounded-sm"
+              />
+              <p className="text-white font-heading font-bold text-xl">
+                Mike <span className="text-gold-400">Huber</span>
+              </p>
+            </div>
             <p className="text-sm leading-relaxed text-navy-400">
               Digital marketing strategist, author, speaker, and trainer. Helping organizations
               transform their marketing through education and strategy.

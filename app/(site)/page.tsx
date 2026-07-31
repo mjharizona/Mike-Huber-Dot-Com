@@ -92,6 +92,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Website Packages teaser ─────────────────────────── */}
+      <section className="section bg-white">
+        <div className="container-site">
+          <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex-1">
+              <span className="badge mb-4 inline-block">Website Packages</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
+                Need an AI-Assisted Website?
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                Clear, scoped pricing — from a quick professional presence to a full digital
+                transformation. No bloated retainers, no mystery pricing.
+              </p>
+            </div>
+            <Link href="/website-packages" className="btn-primary shrink-0">
+              See Website Packages
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Book CTA ─────────────────────────────────────────── */}
       <section className="section bg-white">
         <div className="container-site">
