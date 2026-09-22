@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import TestimonialCard from '@/components/TestimonialCard'
 import { testimonials } from '@/data/testimonials'
@@ -95,7 +96,7 @@ export default function HomePage() {
       {/* ── Website Packages teaser ─────────────────────────── */}
       <section className="section bg-white">
         <div className="container-site">
-          <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-4 md:gap-6">
             <div className="flex-1">
               <span className="badge mb-4 inline-block">Website Packages</span>
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
@@ -142,8 +143,14 @@ export default function HomePage() {
               </div>
             </div>
             <div className="w-48 md:w-56 shrink-0">
-              <div className="bg-navy-800 rounded-xl aspect-[3/4] flex items-center justify-center text-6xl shadow-xl">
-                📖
+              <div className="relative rounded-xl overflow-hidden shadow-xl aspect-[3/4] bg-navy-800">
+                <Image
+                  src="/images/book-cover.jpg"
+                  alt="The Customer Journey by Mike Huber"
+                  fill
+                  className="object-contain"
+                  sizes="224px"
+                />
               </div>
             </div>
           </div>

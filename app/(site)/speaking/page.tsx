@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -62,30 +63,44 @@ export default function SpeakingPage() {
 
       {/* Master Class */}
       <section className="section bg-white">
-        <div className="container-site grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <span className="badge mb-3 inline-block">Signature Workshop</span>
-            <h2 className="font-heading text-3xl font-bold mb-4">
-              Half-Day Master Class: The Customer Journey
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Four hours is a long time to hold an audience&rsquo;s attention. It requires great
-              content, lots of interaction, and a great workbook. Mike has developed and continually
-              improved a half-day digital marketing master class that is consistently rated one of
-              the top presentations at conferences where it has been presented.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Attendees leave with a complete workbook, practical action items, and the clarity to
-              move their digital marketing forward immediately.
-            </p>
-            <Link href="/contact" className="btn-primary">
-              Inquire About This Workshop
-            </Link>
+        <div className="container-site">
+          <div className="grid md:grid-cols-2 gap-6 items-center mb-14">
+            <div>
+              <span className="badge mb-3 inline-block">Signature Workshop</span>
+              <h2 className="font-heading text-3xl font-bold mb-4">
+                Half-Day Master Class: The Customer Journey
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Four hours is a long time to hold an audience&rsquo;s attention. It requires great
+                content, lots of interaction, and a great workbook. Mike has developed and
+                continually improved a half-day digital marketing master class that is
+                consistently rated one of the top presentations at conferences where it has been
+                presented.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Attendees leave with a complete workbook, practical action items, and the clarity
+                to move their digital marketing forward immediately.
+              </p>
+              <Link href="/contact" className="btn-primary">
+                Inquire About This Workshop
+              </Link>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3]">
+              <Image
+                src="/images/DSPHX-Mike-1536x1152-1-1030x773.jpg"
+                alt="Mike Huber presenting a hub-and-spoke content marketing strategy on stage at a conference"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </div>
 
           <div className="card bg-navy-50 border-navy-100">
             <h3 className="font-heading text-xl font-bold text-navy-900 mb-5">Session Topics</h3>
-            <ul className="space-y-3">
+            <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
               {sessions.map((s) => (
                 <li key={s} className="flex items-start gap-3">
                   <span className="mt-1 w-2 h-2 rounded-full bg-gold-500 shrink-0" />

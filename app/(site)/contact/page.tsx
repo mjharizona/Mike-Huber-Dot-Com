@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       {/* Content */}
       <section className="section bg-gray-50">
-        <div className="container-site grid md:grid-cols-3 gap-12">
+        <div className="container-site grid md:grid-cols-3 gap-6">
           {/* Info sidebar */}
           <aside className="md:col-span-1 flex flex-col gap-6">
             <div className="card">

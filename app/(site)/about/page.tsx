@@ -41,7 +41,7 @@ export default function AboutPage() {
 
       {/* Bio */}
       <section className="section bg-white">
-        <div className="container-site grid md:grid-cols-3 gap-12 items-start">
+        <div className="container-site grid md:grid-cols-3 gap-6 items-start">
           {/* Headshot */}
           <div className="md:col-span-1">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg bg-navy-100">
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <li>Advertising Director — Yuma Daily Sun</li>
               <li>VP of Marketing & Sales — Alliance Reservations Network</li>
               <li>Client Services Director — Vertical Measures</li>
-              <li>Guest Lecturer — MBA Marketing Classes (USD, Hult & others)</li>
+              <li>Guest Lecturer — MBA Marketing Classes (UC San Diego, Hult & others)</li>
               <li>Co-author — <em>The Customer Journey</em></li>
               <li>Speaker — Content Marketing World, Digital Summit, AMA Phoenix, and more</li>
             </ul>

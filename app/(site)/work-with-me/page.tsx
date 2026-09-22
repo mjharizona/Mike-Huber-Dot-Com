@@ -68,8 +68,6 @@ const services = [
   },
 ]
 
-const aiIntegrationTags = ['AI-Built Websites', 'AI Content & SEO Workflows', 'AI Process Automation']
-
 const aiUseCases = [
   'Content ideation and first drafts, done in minutes instead of hours',
   'SEO and keyword research at scale',
@@ -193,16 +191,6 @@ export default function WorkWithMePage() {
               quality or your brand&rsquo;s voice. It&rsquo;s a practical, revenue-driving skill
               set I&rsquo;ve been sharpening for years — not hype.
             </p>
-            <div className="flex flex-wrap items-center gap-2 mb-5">
-              {aiIntegrationTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs font-medium bg-white/10 text-gold-300 px-3 py-1 rounded-full border border-white/10"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
             <Link href="/website-packages" className="btn-gold text-sm">
               See Website Packages &amp; Pricing →
             </Link>
@@ -221,7 +209,7 @@ export default function WorkWithMePage() {
 
       {/* AI */}
       <section className="section bg-white">
-        <div className="container-site grid md:grid-cols-2 gap-12 items-start">
+        <div className="container-site grid md:grid-cols-2 gap-6 items-start">
           <div>
             <span className="badge mb-3 inline-block">AI &amp; Marketing</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
@@ -294,7 +282,7 @@ export default function WorkWithMePage() {
 
       {/* Good fit / not a good fit */}
       <section className="section bg-navy-50">
-        <div className="container-site grid gap-12 md:grid-cols-2">
+        <div className="container-site grid gap-6 md:grid-cols-2">
           <div>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
               I Could Be a Good Fit If You Want To:

@@ -114,13 +114,13 @@ export default function TrainingPage() {
 
       {/* MBA Guest Lecturer */}
       <section className="section bg-navy-50">
-        <div className="container-site grid md:grid-cols-2 gap-12 items-center">
+        <div className="container-site grid md:grid-cols-2 gap-6 items-center">
           <div>
             <span className="badge mb-3 inline-block">Academia</span>
             <h2 className="font-heading text-3xl font-bold mb-4">MBA Marketing Class Guest Lecturer</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               Mike has had the opportunity to be a guest lecturer for MBA marketing classes on
-              multiple occasions, including at USD, Hult International Business School. He
+              multiple occasions, including at UC San Diego, Hult International Business School. He
               customizes his ½-day workshop into a shorter timeframe to accommodate class
               schedules while keeping the sessions entirely interactive.
             </p>
@@ -131,7 +131,7 @@ export default function TrainingPage() {
           </div>
           <div className="card bg-white text-center py-10">
             <div className="text-6xl mb-4">🎓</div>
-            <p className="font-heading text-lg font-bold text-navy-900">USD, Hult International Business School</p>
+            <p className="font-heading text-lg font-bold text-navy-900">UC San Diego, Hult International Business School</p>
             <p className="text-sm text-gray-500 mt-2">and other institutions</p>
           </div>
         </div>
