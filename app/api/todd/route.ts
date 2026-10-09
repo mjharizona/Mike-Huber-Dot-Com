@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
       answer('Best way to follow up', clip(b.followUp, 50)),
     ]
 
-    const audio = b.audio && typeof b.audio.b64 === 'string' && b.audio.b64.length < MAX_AUDIO_B64 ? b.audio : null
+    const audio = b.audio && typeof b.audio.b64 === 'string' && b.audio.b64.length >= 100 && b.audio.b64.length < MAX_AUDIO_B64 ? b.audio : null
 
     // one voice note per box (only known fields), within the overall size limit
     const FIELD_TITLES: Record<string, string> = {
@@ -99,24 +99,26 @@ export async function POST(req: NextRequest) {
     let budget = MAX_AUDIO_B64 - (audio ? audio.b64.length : 0)
     if (b.fieldAudio && typeof b.fieldAudio === 'object') {
       for (const [k, v] of Object.entries(b.fieldAudio as Record<string, { b64?: unknown; type?: unknown }>)) {
-        if (!FIELD_TITLES[k] || !v || typeof v.b64 !== 'string' || v.b64.length > budget) continue
+        if (!FIELD_TITLES[k] || !v || typeof v.b64 !== 'string' || v.b64.length < 100 || v.b64.length > budget) continue
         budget -= v.b64.length
         fieldAudio.push({ key: k, b64: v.b64, type: String(v.type || '') })
       }
     }
     const extOf = (t: string) => (t.includes('mp4') ? 'm4a' : 'webm')
+    const mimeOf = (t: string) => (t.includes('mp4') ? 'audio/mp4' : 'audio/webm')
+    const kb = (b64: string) => `${Math.max(1, Math.round((b64.length * 3) / 4 / 1024))} KB`
     const ext = audio && String(audio.type).includes('mp4') ? 'm4a' : 'webm'
     if (fieldAudio.length) {
       parts.push(
         answer(
           'Voice notes in the boxes (attached)',
-          fieldAudio.map((f) => `${FIELD_TITLES[f.key]}: todd-voice-${f.key}.${extOf(f.type)}`).join('\n')
+          fieldAudio.map((f) => `${FIELD_TITLES[f.key]}: todd-voice-${f.key}.${extOf(f.type)} (${kb(f.b64)})`).join('\n')
         )
       )
     }
     const attachments = [
-      ...(audio ? [{ filename: `todd-voice-note.${ext}`, content: audio.b64 }] : []),
-      ...fieldAudio.map((f) => ({ filename: `todd-voice-${f.key}.${extOf(f.type)}`, content: f.b64 })),
+      ...(audio ? [{ filename: `todd-voice-note.${ext}`, content: audio.b64, contentType: mimeOf(String(audio.type)) }] : []),
+      ...fieldAudio.map((f) => ({ filename: `todd-voice-${f.key}.${extOf(f.type)}`, content: f.b64, contentType: mimeOf(f.type) })),
     ]
 
     const to = process.env.CONTACT_EMAIL_TO
@@ -128,6 +130,7 @@ export async function POST(req: NextRequest) {
 
     const resend = new Resend(apiKey)
     const header = `From: ${name}${email ? ` <${email}>` : ''}\nVoice notes attached: ${attachments.length}\n\n`
+    console.log('Todd form attachments:', attachments.map((a) => `${a.filename} ${a.content.length} b64 chars`).join(', ') || 'none')
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
       to,

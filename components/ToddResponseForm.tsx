@@ -115,13 +115,19 @@ export default function ToddResponseForm() {
     }
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      const type = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : ''
+      // prefer AAC in MP4 (plays everywhere, including QuickTime and iPhone), then fall back
+      const type = ['audio/mp4;codecs=mp4a.40.2', 'audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].find((t) => MediaRecorder.isTypeSupported(t)) || ''
       const m = new MediaRecorder(stream, type ? { mimeType: type, audioBitsPerSecond: 32000 } : undefined)
       const chunks: BlobPart[] = []
       m.ondataavailable = (e) => e.data.size && chunks.push(e.data)
       m.onstop = () => {
         stream.getTracks().forEach((t) => t.stop())
-        const blob = new Blob(chunks, { type: m.mimeType || type || 'audio/webm' })
+        const blob = new Blob(chunks, { type: (m.mimeType || type || 'audio/webm').split(';')[0] })
+        if (!blob.size) {
+          setRec('idle')
+          setErr('That voice note came through empty. Please record it again.')
+          return
+        }
         setAudioUrl(URL.createObjectURL(blob))
         const r = new FileReader()
         r.onloadend = () => {
@@ -132,7 +138,7 @@ export default function ToddResponseForm() {
         setRec('done')
       }
       mr.current = m
-      m.start()
+      m.start(1000)
       setSecs(0)
       setRec('recording')
       timer.current = setInterval(() => {

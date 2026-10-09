@@ -32,7 +32,7 @@ export default function VoiceField({
   onClip: (id: string, clip: VoiceClip | null) => void
   children: React.ReactNode
 }) {
-  const [state, setState] = useState<'idle' | 'recording' | 'done' | 'blocked'>('idle')
+  const [state, setState] = useState<'idle' | 'recording' | 'done' | 'blocked' | 'empty'>('idle')
   const [secs, setSecs] = useState(0)
   const [url, setUrl] = useState('')
   const mr = useRef<MediaRecorder | null>(null)
@@ -55,13 +55,18 @@ export default function VoiceField({
     if (stopActive) stopActive()
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-      const type = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : MediaRecorder.isTypeSupported('audio/mp4') ? 'audio/mp4' : ''
+      // prefer AAC in MP4 (plays everywhere, including QuickTime and iPhone), then fall back
+      const type = ['audio/mp4;codecs=mp4a.40.2', 'audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].find((t) => MediaRecorder.isTypeSupported(t)) || ''
       const m = new MediaRecorder(stream, type ? { mimeType: type, audioBitsPerSecond: 32000 } : undefined)
       const chunks: BlobPart[] = []
       m.ondataavailable = (e) => e.data.size && chunks.push(e.data)
       m.onstop = () => {
         stream.getTracks().forEach((t) => t.stop())
-        const blob = new Blob(chunks, { type: m.mimeType || type || 'audio/webm' })
+        const blob = new Blob(chunks, { type: (m.mimeType || type || 'audio/webm').split(';')[0] })
+        if (!blob.size) {
+          setState('empty')
+          return
+        }
         setUrl(URL.createObjectURL(blob))
         const r = new FileReader()
         r.onloadend = () => onClip(id, { b64: String(r.result).split(',')[1] || '', type: blob.type, seconds: secsRef.current })
@@ -69,7 +74,7 @@ export default function VoiceField({
         setState('done')
       }
       mr.current = m
-      m.start()
+      m.start(1000) // collect audio every second so nothing is lost when it stops
       secsRef.current = 0
       setSecs(0)
       setState('recording')
@@ -121,6 +126,9 @@ export default function VoiceField({
             Delete voice note
           </button>
         </div>
+      )}
+      {state === 'empty' && (
+        <p className="mt-2 text-base text-red-700">That recording came through empty. Please click the microphone and try again.</p>
       )}
       {state === 'blocked' && (
         <p className="mt-2 text-base text-red-700">The microphone isn&rsquo;t available in this browser. You can type instead.</p>
