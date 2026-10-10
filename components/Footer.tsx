@@ -10,7 +10,9 @@ const footerLinks = [
   { href: '/content-marketing', label: 'Books By Mike' },
   { href: '/photography',       label: 'Photography' },
   { href: '/testimonials',      label: 'Testimonials' },
+  { href: '/audit',             label: 'Free Audit' },
   { href: '/contact',           label: 'Contact' },
+  { href: '/privacy',           label: 'Privacy' },
 ]
 
 export default function Footer() {

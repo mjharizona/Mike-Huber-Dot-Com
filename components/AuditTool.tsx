@@ -255,7 +255,7 @@ export default function AuditTool() {
               </div>
               <label className="flex gap-3 items-start text-sm text-gray-700">
                 <input type="checkbox" className="mt-1" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
-                <span>Email me my report. Mike Huber may follow up about it. No mailing list, and I can say no at any time.</span>
+                <span>Email me my report. Mike Huber may follow up about it. No mailing list, and I can say no at any time. See the <a href="/privacy" className="underline" target="_blank">privacy policy</a>.</span>
               </label>
               {error && <p className="text-red-700 text-sm" role="alert">{error}</p>}
               <div><button type="submit" className="btn-gold text-lg disabled:opacity-50" disabled={sending}>{sending ? 'Sending…' : 'Email my report'}</button></div>
