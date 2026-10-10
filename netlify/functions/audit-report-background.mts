@@ -18,7 +18,7 @@ export default async (req: Request) => {
 
   const plan = await aiPlan(s)
   const site = process.env.URL || 'https://mikehuber.com'
-  const booking = process.env.NEXT_PUBLIC_BOOKING_URL || '/contact'
+  const booking = process.env.NEXT_PUBLIC_BOOKING_URL || '/book'
   const rep = reportEmail(s, plan, booking, site)
   const resend = new Resend(apiKey)
   const from = process.env.AUDIT_FROM_EMAIL

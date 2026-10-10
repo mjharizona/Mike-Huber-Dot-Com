@@ -36,6 +36,10 @@ export default function PrivacyPage() {
             serve, your answers to the audit questions, your budget range and timeline. If you ask for the full report, also
             your name and email.
           </p>
+          <p className="mb-3">
+            <strong>When you book a call:</strong> the booking calendar on this site is provided by Koalendar. The name,
+            email and any notes you enter there go to Koalendar and to my calendar so we can meet.
+          </p>
           <p>
             <strong>Automatically:</strong> like almost every website, my hosting provider keeps standard server logs, such as
             IP address, browser type and the pages requested, to keep the site running and secure. This site doesn&rsquo;t use
@@ -65,12 +69,14 @@ export default function PrivacyPage() {
             <li><strong>Resend</strong> delivers the emails the site sends.</li>
             <li><strong>Anthropic</strong> drafts the audit&rsquo;s 90-day plan.</li>
             <li><strong>Google</strong> runs the PageSpeed test.</li>
+            <li><strong>Koalendar</strong> runs the booking calendar.</li>
           </ul>
 
           <H>Cookies</H>
           <p>
-            The public site doesn&rsquo;t set tracking or advertising cookies. The only cookie is a login cookie for the
-            site&rsquo;s private admin area, which only I use.
+            This site doesn&rsquo;t set tracking or advertising cookies. The only cookie it sets is a login cookie for the
+            site&rsquo;s private admin area, which only I use. The booking calendar on the Book a Call page comes from
+            Koalendar and may set its own cookies under Koalendar&rsquo;s privacy policy.
           </p>
 
           <H>How long I keep it</H>

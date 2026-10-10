@@ -2,7 +2,7 @@
 // Used by the page, the API routes and the Netlify background function, so keep it free of
 // browser-only or Node-only imports.
 
-export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL || '/contact'
+export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL || '/book'
 export const BOOK_URL = '/content-marketing'
 export const FULL_AUDIT_URL = 'https://marketingfieldguide.ai'
 
