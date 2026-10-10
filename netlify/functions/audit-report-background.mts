@@ -22,6 +22,7 @@ export default async (req: Request) => {
   const rep = reportEmail(s, plan, booking, site)
   const resend = new Resend(apiKey)
   const from = process.env.AUDIT_FROM_EMAIL
+  const team = [to, ...(process.env.AUDIT_CC || '').split(',').map((x) => x.trim()).filter(Boolean)]
 
   if (!from) {
     // No verified sender yet: Resend's test address can only email Mike, so send him the report to forward.
@@ -34,7 +35,7 @@ export default async (req: Request) => {
     })
     return
   }
-  const { error } = await resend.emails.send({ from, to: s.email, bcc: to, replyTo: to, subject: rep.subject, html: rep.html, text: rep.text })
+  const { error } = await resend.emails.send({ from, to: s.email, bcc: team, replyTo: to, subject: rep.subject, html: rep.html, text: rep.text })
   if (error) {
     console.error('Audit report email failed', error)
     await resend.emails.send({ from: 'Mike Huber Website <onboarding@resend.dev>', to, subject: `[Not delivered to ${s.email}] ${rep.subject}`, html: rep.html, text: rep.text })

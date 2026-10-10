@@ -36,10 +36,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email isn’t set up yet. Please try again later.' }, { status: 503 })
     }
     const resend = new Resend(apiKey)
+    // Everyone on the team who gets each lead: Mike plus anyone in AUDIT_CC (comma-separated).
+    const team = [to, ...(process.env.AUDIT_CC || '').split(',').map((x) => x.trim()).filter(Boolean)]
+    // Resend's test sender can only reach the account owner, so use the verified sender once it's set.
+    const sender = process.env.AUDIT_FROM_EMAIL
 
     // 1. Lead email to Mike, right away.
     const lead = leadEmail(s)
-    const { error } = await resend.emails.send({ from: LEAD_FROM, to, replyTo: s.email, subject: lead.subject, html: lead.html, text: lead.text })
+    const { error } = await resend.emails.send({ from: sender || LEAD_FROM, to: sender ? team : to, replyTo: s.email, subject: lead.subject, html: lead.html, text: lead.text })
     if (error) {
       console.error('Audit lead email failed', error)
       return NextResponse.json({ error: 'We couldn’t send your report. Please try again in a minute.' }, { status: 502 })
@@ -62,10 +66,9 @@ export async function POST(req: NextRequest) {
     }
     // Fallback (local dev, or the background function is missing): send the score-based report now.
     if (!queued) {
-      const from = process.env.AUDIT_FROM_EMAIL
-      if (from) {
+      if (sender) {
         const rep = reportEmail(s, null, BOOKING_URL, origin)
-        await resend.emails.send({ from, to: s.email, bcc: to, replyTo: to, subject: rep.subject, html: rep.html, text: rep.text })
+        await resend.emails.send({ from: sender, to: s.email, bcc: team, replyTo: to, subject: rep.subject, html: rep.html, text: rep.text })
       }
     }
     return NextResponse.json({ success: true })
