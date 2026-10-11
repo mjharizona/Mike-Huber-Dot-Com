@@ -107,7 +107,7 @@ export default function Nav() {
               </Link>
             )
           })}
-          <Link href="/contact" className="ml-2 btn-gold text-sm whitespace-nowrap !px-4 !py-2">
+          <Link href="/book" className="ml-2 btn-gold text-sm whitespace-nowrap !px-4 !py-2">
             Book Mike
           </Link>
         </nav>
@@ -195,7 +195,7 @@ export default function Nav() {
               )
             })}
             <Link
-              href="/contact"
+              href="/book"
               onClick={() => setOpen(false)}
               className="btn-gold mt-2 justify-center text-sm"
             >

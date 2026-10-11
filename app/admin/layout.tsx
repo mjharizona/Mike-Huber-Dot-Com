@@ -6,6 +6,7 @@ const navItems = [
   { href: '/admin',        label: 'Dashboard', icon: '📊' },
   { href: '/admin/leads',  label: 'Leads',     icon: '📬' },
   { href: '/admin/posts',  label: 'Blog Posts', icon: '📝' },
+  { href: '/admin/readiness', label: 'Readiness', icon: '🧭' },
 ]
 
 function AdminNav() {

@@ -62,7 +62,7 @@ export default function Footer() {
             <p className="text-sm text-navy-400 mb-4">
               Interested in having Mike speak at your event or train your team?
             </p>
-            <Link href="/contact" className="btn-gold text-sm">
+            <Link href="/book" className="btn-gold text-sm">
               Book Mike
             </Link>
             <p className="mt-4 text-sm">

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'What information mikehuber.com collects, how it is used, and how to have it deleted.',
 }
 
-const UPDATED = 'October 10, 2026'
+const UPDATED = 'October 11, 2026'
 
 function H({ children }: { children: React.ReactNode }) {
   return <h2 className="font-heading text-2xl font-bold text-navy-900 mt-10 mb-3">{children}</h2>
@@ -37,6 +37,10 @@ export default function PrivacyPage() {
             your name and email.
           </p>
           <p className="mb-3">
+            <strong>When you take a Team Readiness Assessment:</strong> your ratings and any comments you choose to write.
+            The assessment doesn&rsquo;t ask for your name or email. See &ldquo;The Team Readiness Assessment, in detail&rdquo; below.
+          </p>
+          <p className="mb-3">
             <strong>When you book a call:</strong> the booking calendar on this site is provided by Koalendar. The name,
             email and any notes you enter there go to Koalendar and to my calendar so we can meet.
           </p>
@@ -62,12 +66,23 @@ export default function PrivacyPage() {
             <li><strong>Who sees it.</strong> Your report and contact details go to me and to my co-author, Loren Ankarlo, so one of us can follow up if you want help.</li>
           </ul>
 
+          <H>The Team Readiness Assessment, in detail</H>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Who takes it.</strong> Organizations that book a workshop with me and Loren Ankarlo invite their people with a private link.</li>
+            <li><strong>What&rsquo;s saved.</strong> Your ratings, your optional comments, the date, and whether you used the leadership link or the team link. Not your name, email or IP address.</li>
+            <li><strong>Your own results.</strong> Your scores and PDF are made in your browser. Your progress is kept on your own device until you finish.</li>
+            <li><strong>What your organization sees.</strong> Only combined results, and only once at least three people have answered. Leadership answers are shown as a group, which the leadership link explains. Comments are summarized into themes and never quoted.</li>
+            <li><strong>AI summaries.</strong> To summarize comments, the comments (without any names) are sent to Anthropic, the company behind Claude.</li>
+            <li><strong>Who can see the raw answers.</strong> Only me and Loren, to run the workshop. We don&rsquo;t share them.</li>
+            <li><strong>How long.</strong> We keep responses for up to two years so your organization can compare before and after, then delete them. Your organization can ask us to delete them sooner.</li>
+          </ul>
+
           <H>Services that help run this site</H>
           <p className="mb-3">These companies process information only to provide their service to me:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Netlify</strong> hosts the website.</li>
+            <li><strong>Netlify</strong> hosts the website and stores Team Readiness Assessment responses.</li>
             <li><strong>Resend</strong> delivers the emails the site sends.</li>
-            <li><strong>Anthropic</strong> drafts the audit&rsquo;s 90-day plan.</li>
+            <li><strong>Anthropic</strong> drafts the audit&rsquo;s 90-day plan and summarizes assessment comments.</li>
             <li><strong>Google</strong> runs the PageSpeed test.</li>
             <li><strong>Koalendar</strong> runs the booking calendar.</li>
           </ul>
