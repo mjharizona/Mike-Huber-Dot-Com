@@ -8,6 +8,8 @@ export type Item = { id: string; text: string; chapter: string; isNew?: boolean 
 
 export const SCALE_SKILL = ['', 'No experience', 'Beginner', 'Can do it with help', 'Can do it on my own', 'Could teach it']
 export const SCALE_AGREE = ['', 'Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
+// Chapter 3 asks "how true each statement is for your organization today."
+export const SCALE_TRUE = ['', 'Not true', 'Slightly true', 'Somewhat true', 'Mostly true', 'Completely true']
 export const SCALE_DO = ['', 'Not at all', 'Poorly', 'Okay', 'Well', 'Very well']
 export const SCALE_IMPORTANT = ['', 'Not important', 'Slightly', 'Moderately', 'Very', 'Critical']
 
@@ -137,10 +139,10 @@ export const ALL_RATED: string[] = [
 
 export const BANDS: [number, string, string][] = [
   [1.7, 'Novice', 'Little or no experience. Start with training basics.'],
-  [2.5, 'Beginner', 'Some exposure, but guidance is needed to execute.'],
-  [3.3, 'Intermediate', 'Can execute independently in most areas.'],
-  [4.1, 'Advanced', 'Executes well and can teach others.'],
-  [5, 'Expert', 'Sets the standard and leads strategy.'],
+  [2.5, 'Beginner', 'Some exposure, but you need guidance to execute.'],
+  [3.3, 'Intermediate', 'You can execute independently in most areas.'],
+  [4.1, 'Advanced', 'You execute well and can teach others.'],
+  [5, 'Expert', 'You set the standard and lead strategy.'],
 ]
 export function band(avg: number | null) {
   if (avg === null || Number.isNaN(avg)) return { name: '–', meaning: '' }

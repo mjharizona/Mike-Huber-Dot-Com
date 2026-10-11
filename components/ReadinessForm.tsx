@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   AI_SKILLS, CHANGE, DISCIPLINES, LADDER_ME, LADDER_NAMES, LADDER_TEAM, OPEN, ORG, RULES, SKILLS,
-  SCALE_AGREE, SCALE_DO, SCALE_IMPORTANT, SCALE_SKILL, ALL_RATED,
+  SCALE_AGREE, SCALE_TRUE, SCALE_DO, SCALE_IMPORTANT, SCALE_SKILL, ALL_RATED,
   band, r1, scores, strengthsGaps,
 } from '@/lib/readiness'
 import type { Answers, Group, Item, OpenAnswers } from '@/lib/readiness'
@@ -157,8 +157,8 @@ export default function ReadinessForm({ token, org, group, open: isOpen }: Props
         {step === 2 && (<>
           <h2 className="font-heading text-2xl font-bold text-navy-900 mb-1">Your organization</h2>
           <p className="text-gray-600">How true is each statement for {org} today?</p>
-          <Legend labels={SCALE_AGREE} />
-          <Rows items={ORG} a={a} set={set} labels={SCALE_AGREE} />
+          <Legend labels={SCALE_TRUE} />
+          <Rows items={ORG} a={a} set={set} labels={SCALE_TRUE} />
           <h3 className="font-bold text-navy-900 mt-6 mb-3">Where is your team on AI today?</h3>
           <Ladder name="ladderTeam" options={LADDER_TEAM} value={a.ladderTeam} onChange={(v) => set('ladderTeam', v)} />
         </>)}
