@@ -5,85 +5,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Content & Book',
   description:
-    'Mike Huber is co-author of The Customer Journey — How an Owned Audience Can Transform Your Business, plus articles, podcasts, and digital marketing resources.',
+    'Books by Mike Huber: The Customer Journey — How an Owned Audience Can Transform Your Business, and Business Transformation Through Digital Marketing.',
 }
-
-const articles = [
-  {
-    title: 'How Much Does a Website Cost',
-    url: 'https://www.digital1stmarketing.com/resources/how-much-does-a-website-cost/',
-  },
-  {
-    title: 'Will ChatGPT Change Everything for Digital Marketers?',
-    url: 'https://www.digital1stmarketing.com/resources/will-chatgpt-change-everything-for-digital-marketers/',
-  },
-  {
-    title: 'Guide to Account Based Marketing',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/guide-account-based-marketing',
-  },
-  {
-    title: '6 Tips to Run Effective Meetings',
-    url: 'https://www.investisdigital.com/blog/corporate-communications/tips-run-effective-meeting',
-  },
-  {
-    title: 'How Long Does It Take to Get Organic Traffic on a New Website',
-    url: 'https://www.digital1stmarketing.com/resources/how-long-does-it-take-to-get-organic-traffic-on-a-new-website/',
-  },
-  {
-    title: 'Content and the Customer Experience',
-    url: 'https://www.investisdigital.com/blog/corporate-communications/content-and-customer-experience',
-  },
-  {
-    title: 'Is the Sales Funnel Dead?',
-    url: 'https://www.investisdigital.com/blog/digital-communications/is-the-sales-funnel-dead',
-  },
-  {
-    title: 'Build Your Digital Marketing Strategy Around the Hub and Spoke Model',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/build-your-content-marketing-strategy-around-hub-spoke-model',
-  },
-  {
-    title: 'In-House vs. Agency Marketing',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/in-house-vs-agency-marketing',
-  },
-  {
-    title: 'Webinars Done Right — How to Plan, Produce and Promote an Amazing Webinar',
-    url: 'https://www.investisdigital.com/blog/news/webinars-done-right-demand-how-plan-produce-and-promote-amazing-webinar',
-  },
-  {
-    title: '10 Ways to Improve Your Performance Marketing',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/10-ways-improve-your-performance-marketing-during-covid-19',
-  },
-  {
-    title: 'Why Digital Marketing Campaigns Fail',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/reason-digital-marketing-campaigns-fail',
-  },
-  {
-    title: '8 Things Organizations Miss When Redesigning a Website',
-    url: 'https://www.investisdigital.com/blog/web-design-and-development/8-things-businesses-miss-when-redesigning-their-website',
-  },
-  {
-    title: 'How to Create a Digital Marketing Budget That Works',
-    url: 'https://www.investisdigital.com/blog/performance-marketing/how-to-create-a-digital-marketing-budget-that-works',
-  },
-]
-
-const podcasts = [
-  {
-    title: 'How to Get Your Story Found Online',
-    url: 'https://businessofstory.com/podcast/get-your-story-found/',
-    host: 'Business of Story',
-  },
-  {
-    title: 'How an Owned Audience Can Transform Your Business',
-    url: 'https://www.wirebuzz.com/blog/owned-audience-can-transform-business',
-    host: 'WireBuzz',
-  },
-  {
-    title: 'How to Create a Hub and Spoke Marketing Strategy',
-    url: 'https://www.wirebuzz.com/blog/hub-and-spoke-content-marketing',
-    host: 'WireBuzz',
-  },
-]
 
 export default function ContentMarketingPage() {
   return (
@@ -218,61 +141,6 @@ export default function ContentMarketingPage() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Articles */}
-      <section className="section bg-gray-50">
-        <div className="container-site">
-          <div className="text-center mb-10">
-            <span className="badge mb-3">Articles</span>
-            <h2 className="font-heading text-3xl font-bold">Articles & Resources</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-4xl mx-auto">
-            {articles.map((a) => (
-              <a
-                key={a.url}
-                href={a.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-gray-100 hover:border-navy-300 hover:shadow-sm transition-all group"
-              >
-                <span className="text-gold-500 mt-0.5">→</span>
-                <span className="text-sm font-medium text-navy-800 group-hover:text-navy-600 leading-snug">
-                  {a.title}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Podcasts */}
-      <section className="section bg-white">
-        <div className="container-site">
-          <div className="text-center mb-10">
-            <span className="badge mb-3">Podcasts</span>
-            <h2 className="font-heading text-3xl font-bold">Podcast Guest Appearances</h2>
-          </div>
-          <div className="flex flex-col gap-4 max-w-2xl mx-auto">
-            {podcasts.map((p) => (
-              <a
-                key={p.url}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card flex items-center gap-5 hover:shadow-md transition-shadow group"
-              >
-                <div className="text-3xl shrink-0">🎙️</div>
-                <div>
-                  <p className="font-semibold text-navy-900 group-hover:text-navy-700 leading-snug">
-                    {p.title}
-                  </p>
-                  <p className="text-sm text-gray-500 mt-0.5">{p.host}</p>
-                </div>
-              </a>
-            ))}
           </div>
         </div>
       </section>
