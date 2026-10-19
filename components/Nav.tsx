@@ -23,6 +23,7 @@ const links: NavItem[] = [
   { href: '/website-packages', label: 'Website Packages' },
   { href: '/photography', label: 'Photography' },
   { href: '/testimonials', label: 'Testimonials' },
+  { href: '/audit', label: 'Free Audit' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -37,7 +38,7 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-navy-900 shadow-lg">
       <div className="container-site flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
           <Image
             src="/images/logo-mh.png"
             alt="Mike Huber"
@@ -46,20 +47,20 @@ export default function Nav() {
             className="h-9 w-auto rounded-sm"
             priority
           />
-          <span className="text-white font-heading font-bold text-xl tracking-tight group-hover:text-gold-400 transition-colors">
+          <span className="text-white font-heading font-bold text-xl tracking-tight whitespace-nowrap group-hover:text-gold-400 transition-colors">
             Mike <span className="text-gold-400 group-hover:text-white transition-colors">Huber</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-0.5 ml-6">
           {links.map((item) => {
             if (item.children) {
               const active = item.children.some((c) => isActive(c.href))
               return (
                 <div key={item.label} className="group relative">
                   <button
-                    className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`flex items-center gap-1 px-2 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
                       active
                         ? 'bg-navy-700 text-white'
                         : 'text-navy-200 hover:text-white hover:bg-navy-800'
@@ -96,7 +97,7 @@ export default function Nav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-2 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
                   active
                     ? 'bg-navy-700 text-white'
                     : 'text-navy-200 hover:text-white hover:bg-navy-800'
@@ -106,14 +107,14 @@ export default function Nav() {
               </Link>
             )
           })}
-          <Link href="/contact" className="ml-3 btn-gold text-sm !px-4 !py-2">
+          <Link href="/book" className="ml-2 btn-gold text-sm whitespace-nowrap !px-4 !py-2">
             Book Mike
           </Link>
         </nav>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-white p-2 rounded-md hover:bg-navy-800 transition-colors"
+          className="xl:hidden text-white p-2 rounded-md hover:bg-navy-800 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -131,7 +132,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-950 border-t border-navy-800 px-4 pb-4">
+        <div className="xl:hidden bg-navy-950 border-t border-navy-800 px-4 pb-4">
           <nav className="flex flex-col gap-1 pt-2">
             {links.map((item) => {
               if (item.children) {
@@ -194,7 +195,7 @@ export default function Nav() {
               )
             })}
             <Link
-              href="/contact"
+              href="/book"
               onClick={() => setOpen(false)}
               className="btn-gold mt-2 justify-center text-sm"
             >

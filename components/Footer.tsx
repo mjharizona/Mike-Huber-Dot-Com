@@ -10,7 +10,9 @@ const footerLinks = [
   { href: '/content-marketing', label: 'Books By Mike' },
   { href: '/photography',       label: 'Photography' },
   { href: '/testimonials',      label: 'Testimonials' },
+  { href: '/audit',             label: 'Free Audit' },
   { href: '/contact',           label: 'Contact' },
+  { href: '/privacy',           label: 'Privacy' },
 ]
 
 export default function Footer() {
@@ -60,7 +62,7 @@ export default function Footer() {
             <p className="text-sm text-navy-400 mb-4">
               Interested in having Mike speak at your event or train your team?
             </p>
-            <Link href="/contact" className="btn-gold text-sm">
+            <Link href="/book" className="btn-gold text-sm">
               Book Mike
             </Link>
             <p className="mt-4 text-sm">
