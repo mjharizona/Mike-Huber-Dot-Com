@@ -149,28 +149,8 @@ export default function WorkWithMePage() {
         </div>
       </section>
 
-      {/* Challenges */}
-      <section className="section bg-white">
-        <div className="container-site">
-          <div className="text-center mb-12">
-            <span className="badge mb-3">Sound Familiar?</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold">
-              Challenges I Help Solve
-            </h2>
-          </div>
-          <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2 max-w-4xl mx-auto">
-            {challenges.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-1 w-2 h-2 rounded-full bg-gold-500 shrink-0" />
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* Services */}
-      <section className="section bg-gray-50">
+      <section className="section bg-white">
         <div className="container-site">
           <div className="text-center mb-12">
             <span className="badge mb-3">Services</span>
@@ -204,6 +184,26 @@ export default function WorkWithMePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Challenges */}
+      <section className="section bg-gray-50">
+        <div className="container-site">
+          <div className="text-center mb-12">
+            <span className="badge mb-3">Sound Familiar?</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold">
+              Challenges I Help Solve
+            </h2>
+          </div>
+          <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2 max-w-4xl mx-auto">
+            {challenges.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="mt-1 w-2 h-2 rounded-full bg-gold-500 shrink-0" />
+                <span className="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
