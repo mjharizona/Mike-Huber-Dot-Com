@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/posts'
-import { format } from 'date-fns'
+import { getAllPosts, formatPostDate, mfgUrl } from '@/lib/posts'
+
+// Scheduled publishing: rebuilt at most hourly, so a post appears on its date without a redeploy (lib/posts.ts).
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Practical digital marketing insights from Mike Huber — SEO, content strategy, website optimization, and more.',
+  alternates: { canonical: '/blog', types: { 'application/rss+xml': '/blog/rss.xml' } },
 }
 
 export default function BlogPage() {
@@ -68,8 +71,10 @@ export default function BlogPage() {
                         <span>{post.author}</span>
                         <span>·</span>
                         <time dateTime={post.date}>
-                          {format(new Date(post.date), 'MMMM d, yyyy')}
+                          {formatPostDate(post.date)}
                         </time>
+                        <span>·</span>
+                        <span>{post.readingMinutes} min read</span>
                       </div>
                     </div>
                     <span className="text-navy-400 group-hover:text-navy-700 font-medium text-sm shrink-0 mt-1 md:mt-2">
@@ -80,6 +85,13 @@ export default function BlogPage() {
               ))}
             </div>
           )}
+          <p className="mt-8 text-sm text-gray-500">
+            Looking for the free tools from the book?{' '}
+            <a href={mfgUrl('/resources', 'blog-list')} className="font-semibold text-navy-700 hover:text-navy-900 underline">
+              Visit the Marketing Field Guide
+            </a>{' '}
+            · <a href="/blog/rss.xml" className="font-semibold text-navy-700 hover:text-navy-900 underline">RSS</a>
+          </p>
         </div>
       </section>
     </>

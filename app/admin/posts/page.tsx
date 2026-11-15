@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/posts'
+import { getAllPostsIncludingScheduled } from '@/lib/posts'
 import { format } from 'date-fns'
 
 export default function AdminPostsPage() {
-  const posts = getAllPosts()
+  const posts = getAllPostsIncludingScheduled()
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default function AdminPostsPage() {
             Create a <code className="bg-white px-1 rounded">.md</code> or{' '}
             <code className="bg-white px-1 rounded">.mdx</code> file in{' '}
             <code className="bg-white px-1 rounded">content/posts/</code> — it will appear here and
-            on the public blog automatically.
+            on the public blog on its date (scheduled posts show here first).
           </p>
         </div>
       </div>
@@ -44,7 +44,8 @@ export default function AdminPostsPage() {
                     <p className="text-gray-400 text-xs mt-0.5 line-clamp-1">{post.excerpt}</p>
                   </td>
                   <td className="px-6 py-4 text-gray-500 text-xs">
-                    {format(new Date(post.date), 'MMM d, yyyy')}
+                    {format(new Date(`${post.date}T12:00:00`), 'MMM d, yyyy')}
+                    {post.scheduled && <span className="ml-2 rounded-full bg-gold-400/20 px-2 py-0.5 font-semibold text-gold-600">Scheduled</span>}
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap gap-1">
@@ -59,13 +60,13 @@ export default function AdminPostsPage() {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <Link
+                    {!post.scheduled && <Link
                       href={`/blog/${post.slug}`}
                       target="_blank"
                       className="text-navy-600 hover:underline text-xs font-medium"
                     >
                       View →
-                    </Link>
+                    </Link>}
                   </td>
                 </tr>
               ))}

@@ -15,7 +15,7 @@ const highlights = [
     icon: '📚',
     title: 'Author & Co-Author',
     description:
-      'Co-author of The Customer Journey — How an Owned Audience Can Transform Your Business.',
+      'Author of Business Transformation Through AI-Powered Marketing (2nd edition, with Loren Ankarlo) and co-author of The Customer Journey.',
     href: '/content-marketing',
   },
   {
@@ -119,40 +119,62 @@ export default function HomePage() {
         <div className="container-site">
           <div className="bg-navy-900 rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1 text-white">
-              <span className="badge mb-4 bg-gold-400/20 text-gold-400 inline-block">New Book</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 leading-snug">
-                The Customer Journey
+              <span className="badge mb-4 bg-gold-400/20 text-gold-400 inline-block">New Book · Second Edition</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 leading-snug text-white">
+                Business Transformation Through AI-Powered Marketing
               </h2>
               <p className="text-navy-300 leading-relaxed mb-6">
-                How an Owned Audience Can Transform Your Business. In the digital marketing space,
-                every organization finds itself at a unique point on a continuum. This book is
-                designed to meet you where you are — offering insights you can tailor to your
-                specific goals and aspirations.
+                The field guide for small businesses and marketing teams, written with Loren Ankarlo. Read it,
+                fill in the worksheets, then use AI to turn your answers into a plan. The tools, templates and
+                workbook are free at marketingfieldguide.ai. When you want help putting it to work, that&rsquo;s
+                what I do.
               </p>
               <div className="flex gap-4 flex-wrap">
-                <Link href="/content-marketing" className="btn-gold">
-                  Learn More
-                </Link>
+                <a href="https://marketingfieldguide.ai/book?utm_source=mikehuber.com&utm_medium=referral&utm_campaign=q1-2027&utm_content=home-book" className="btn-gold">
+                  About the Book
+                </a>
                 <a
-                  href="/images/FINAL-The-Customer-Journey_website_Book-copy.pdf"
-                  download
+                  href="https://marketingfieldguide.ai/resources?utm_source=mikehuber.com&utm_medium=referral&utm_campaign=q1-2027&utm_content=home-book"
                   className="btn-secondary border-navy-500 text-navy-300 hover:bg-navy-700 hover:text-white"
                 >
-                  Download PDF
+                  Free Tools
                 </a>
               </div>
             </div>
             <div className="w-48 md:w-56 shrink-0">
               <div className="relative rounded-xl overflow-hidden shadow-xl aspect-[3/4] bg-navy-800">
                 <Image
-                  src="/images/book-cover.jpg"
-                  alt="The Customer Journey by Mike Huber"
+                  src="/images/book-cover-2e.png"
+                  alt="Business Transformation Through AI-Powered Marketing, second edition, by Mike Huber with Loren Ankarlo"
                   fill
                   className="object-contain"
                   sizes="224px"
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── From the field guide (Nov 10, 2026) ──────────────── */}
+      <section className="pb-8 md:pb-12 bg-white">
+        <div className="container-site">
+          <div className="rounded-2xl border border-navy-100 bg-navy-50 p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
+            <div className="flex-1">
+              <span className="badge mb-2 inline-block">From the field guide</span>
+              <h2 className="font-heading text-xl md:text-2xl font-bold text-navy-900">
+                One practical idea a week, with a free tool to put it to work.
+              </h2>
+              <p className="text-gray-600 text-sm mt-1">
+                From <em>Business Transformation Through AI-Powered Marketing</em>, by Mike Huber with Loren Ankarlo.
+              </p>
+            </div>
+            <a
+              href="https://marketingfieldguide.ai/blog?utm_source=mikehuber.com&utm_medium=referral&utm_campaign=q1-2027&utm_content=home"
+              className="btn-primary shrink-0 justify-center"
+            >
+              Read the field guide blog →
+            </a>
           </div>
         </div>
       </section>
