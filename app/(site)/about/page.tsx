@@ -68,9 +68,15 @@ export default function AboutPage() {
           <div className="md:col-span-2 prose prose-lg max-w-none">
             <p>
               Mike Huber is a seasoned marketing professional with over 25 years of experience in
-              marketing and advertising and lead-author of the books{' '}
-              <em>The Customer Journey: How an Owned Audience Can Transform Your Business</em>{' '}
-              and <em>Business Transformation Through Digital Marketing</em>.
+              marketing and advertising. He is the author of{' '}
+              <em>Business Transformation Through AI-Powered Marketing: The Field Guide for Small Businesses and Marketing
+              Teams</em>{' '}
+              (second edition, with{' '}
+              <a href="https://lorenankarlo.com" target="_blank" rel="noopener noreferrer">
+                Loren Ankarlo
+              </a>
+              ) and lead author of{' '}
+              <em>The Customer Journey: How an Owned Audience Can Transform Your Business</em>.
             </p>
             <p>
               He is frequently speaking at conferences about digital marketing — doing ½-day

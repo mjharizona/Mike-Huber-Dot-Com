@@ -4,14 +4,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Training',
   description:
-    'Customized digital marketing training for enterprise organizations including John Deere, Medtronic, and the USMC.',
+    'Customized AI-powered and digital marketing training for small teams and enterprise organizations, built on the book Business Transformation Through AI-Powered Marketing.',
 }
 
 const trainingFeatures = [
   {
     title: 'Needs Analysis First',
     description:
-      'Every engagement starts with a needs analysis and skills assessment to measure digital marketing maturity for each team member and the overall department.',
+      'Every engagement starts with a needs analysis and skills assessment. For AI workshops, your team also takes a private Team Readiness Assessment, so the session starts where your people actually are.',
   },
   {
     title: 'Skills Assessments',
@@ -41,6 +41,12 @@ const trainingFeatures = [
 ]
 
 const topics = [
+  'AI-Powered Marketing for Small Teams',
+  'The AI Fluency Ladder: Getting Your Team Using AI',
+  'AI Usage Policy & Guardrails',
+  'Leading People Through Change (with Loren Ankarlo)',
+  'Lead Response, Scoring & Nurture',
+  'SEO & AI Search',
   'Digital Marketing Strategy & Transformation',
   'Content Marketing & the Customer Journey',
   'Search Engine Optimization (SEO)',
