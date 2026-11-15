@@ -11,6 +11,8 @@ const footerLinks = [
   { href: '/photography',       label: 'Photography' },
   { href: '/testimonials',      label: 'Testimonials' },
   { href: '/audit',             label: 'Free Audit' },
+  { href: '/blog',              label: 'Blog' },
+  { href: 'https://marketingfieldguide.ai/resources?utm_source=mikehuber.com&utm_medium=referral&utm_campaign=q1-2027&utm_content=footer', label: 'Free Tools' },
   { href: '/contact',           label: 'Contact' },
   { href: '/privacy',           label: 'Privacy' },
 ]

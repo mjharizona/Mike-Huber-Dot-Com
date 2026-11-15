@@ -9,6 +9,10 @@ export const metadata: Metadata = {
 }
 
 const sessions = [
+  'Business Transformation Through AI-Powered Marketing',
+  'How Much Time Can AI Really Save a Small Marketing Team?',
+  'Getting Your Whole Team Using AI Every Day',
+  'Why Small Businesses Lose Leads, and Where to Look First',
   'From Frustration to Success with Digital Marketing',
   'Google Rewards High Quality Content — But What Constitutes High Quality?',
   'The 5 Must-Haves for Your Website',

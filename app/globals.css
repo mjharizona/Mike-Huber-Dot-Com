@@ -76,3 +76,51 @@
 .logo-track:hover {
   animation-play-state: paused;
 }
+
+/* Blog post code blocks (AI prompts): wrapped and readable, with a Copy button (components/CopyCode.tsx). Nov 10, 2026. */
+.post-body pre {
+  position: relative;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #f0f4fa;
+  color: #1f2937;
+  border: 1px solid #b9cce7;
+  border-radius: 1rem;
+  padding: 3rem 1.25rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.post-body pre code { font-family: var(--font-inter), system-ui, sans-serif; white-space: pre-wrap; color: inherit; background: none; }
+.post-body pre::before { content: 'AI prompt'; position: absolute; left: 1.25rem; top: 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #2b508d; }
+.post-body .copy-btn { position: absolute; right: 0.75rem; top: 0.75rem; border: 1px solid #8aabd5; background: #fff; color: #1e3a6e; border-radius: 0.5rem; padding: 0.25rem 0.75rem; font-size: 0.85rem; font-weight: 600; }
+.post-body .copy-btn:hover { background: #1e3a6e; color: #fff; }
+
+/* Skim, Skip, Read post format (Nov 11, 2026): boxes, jump links and captioned figures made by lib/postFormat.ts */
+.post-body blockquote.box { border-left: 0; font-style: normal; border-radius: 1rem; padding: 1.1rem 1.4rem; margin: 1.6rem 0; quotes: none; }
+.post-body blockquote.box p::before, .post-body blockquote.box p::after { content: none; }
+.post-body blockquote.box p { margin: 0.5rem 0; color: #1f2937; }
+.post-body blockquote.box ul { margin: 0.4rem 0 0; }
+.post-body .box-label { margin: 0 0 0.35rem !important; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.post-body .box-label strong { color: inherit; }
+.post-body .box-answer { background: #eef3fb; color: #16285a; }
+.post-body .box-answer p:not(.box-label) { font-size: 1.15rem; line-height: 1.6; }
+.post-body .box-takeaways { background: #fff7f1; border: 1px solid #f6d3bd; color: #b4501d; }
+.post-body .box-why { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; }
+.post-body .box-try { background: #f4f7fc; border: 1px solid #c9d8ee; color: #2b508d; }
+.post-body .box-try pre { margin: 0.8rem 0; background: #fff; }
+.post-body .post-toc { border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 0.9rem 0; margin: 1.6rem 0; color: #64748b; }
+.post-body .post-toc ul { list-style: none; padding: 0; margin: 0.3rem 0 0; columns: 2; column-gap: 2rem; }
+.post-body .post-toc li { padding: 0; margin: 0.25rem 0; break-inside: avoid; font-size: 0.98rem; }
+.post-body .post-toc li::before { content: none; }
+.post-body .post-toc a { text-decoration: none; color: #1e3a6e; }
+.post-body .post-toc a:hover { text-decoration: underline; }
+@media (max-width: 640px) { .post-body .post-toc ul { columns: 1; } }
+.post-body h2[id] { scroll-margin-top: 6rem; }
+.post-body .post-figure { margin: 2rem 0; }
+.post-body .post-figure img { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid #e5e7eb; margin: 0; }
+.post-body .post-figure figcaption { margin-top: 0.6rem; font-size: 0.95rem; color: #64748b; text-align: center; }
+.post-body blockquote.box li, .post-body blockquote.box li strong, .post-body blockquote.box p:not(.box-label) { color: #1f2937; }
+.post-body blockquote.box li::marker { color: #b4501d; }
+/* Pull quotes (Nov 11, 2026): the post supplies its own quote marks and a short attribution line */
+.post-body blockquote:not(.box) p::before, .post-body blockquote:not(.box) p::after { content: none; }
+.post-body blockquote:not(.box) p + p { font-size: 1rem; font-style: normal; color: #64748b; margin-top: 0.25rem; }

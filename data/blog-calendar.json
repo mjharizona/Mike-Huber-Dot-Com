@@ -1,0 +1,50 @@
+{
+  "how-much-time-ai-saves-marketing-team": {
+    "cta": "/training",
+    "tool": "/resources"
+  },
+  "use-ai-to-reposition-small-business": {
+    "cta": "/audit",
+    "tool": "/swot"
+  },
+  "ai-adoption-levels-marketing-team": {
+    "cta": "/readiness",
+    "tool": "/skills-assessment"
+  },
+  "why-small-business-losing-leads": {
+    "cta": "/audit",
+    "tool": "/lead-value-calculator"
+  },
+  "talk-to-team-about-ai-job-fears": {
+    "cta": "/training",
+    "tool": "/readiness"
+  },
+  "ai-built-website-cost-small-business": {
+    "cta": "/website-packages",
+    "tool": "/website-cost-calculator"
+  },
+  "decide-which-ai-projects-to-do": {
+    "cta": "/work-with-me",
+    "tool": "/ranked-scoring"
+  },
+  "get-marketing-team-using-ai": {
+    "cta": "/training",
+    "tool": "/templates/first-90-days"
+  },
+  "how-fast-to-respond-to-leads": {
+    "cta": "/audit",
+    "tool": "/lead-score"
+  },
+  "hire-marketer-agency-or-use-ai": {
+    "cta": "/work-with-me",
+    "tool": "/blueprint"
+  },
+  "ai-training-for-marketing-teams": {
+    "cta": "/training",
+    "tool": "/skills-assessment"
+  },
+  "focus-business-doing-too-much": {
+    "cta": "/work-with-me",
+    "tool": "/resources"
+  }
+}
