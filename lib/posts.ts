@@ -144,11 +144,7 @@ export const formatPostDate = (d: string) =>
 export function ctaLabel(p: PostMeta): string {
   if (p.ctaLabel) return p.ctaLabel
   const labels: Record<string, string> = {
-<<<<<<< HEAD
     '/workshops': 'Explore team workshops', '/work-with-me': 'Work with Mike', '/training': 'Team training with Mike', '/audit': 'Get a free marketing audit',
-=======
-    '/work-with-me': 'Work with Mike', '/training': 'Team training with Mike', '/audit': 'Get a free marketing audit',
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
     '/readiness': 'Take the AI readiness check', '/website-packages': 'See website packages', '/speaking': 'Book Mike to speak', '/contact': 'Talk with Mike',
   }
   return labels[p.cta] ?? 'Work with Mike'

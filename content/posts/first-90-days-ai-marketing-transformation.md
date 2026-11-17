@@ -83,6 +83,4 @@ This 90-day sequence is the final module of the three-day Business Transformatio
 
 ## Sources
 
-- Business Transformation Through AI-Powered Marketing, second edition, Chapters 1 and 24
-
-<!-- TODO (Mike): confirm wording against the frozen book before publishing. -->
+- [Business Transformation Through AI-Powered Marketing](/books/business-transformation-ai-marketing), second edition, Chapters 1 and 24

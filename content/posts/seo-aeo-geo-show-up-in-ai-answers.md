@@ -89,10 +89,8 @@ If you'd like help building this into your team's routine, this is one of the wo
 
 ## Sources
 
-- Pew Research Center, 2025 study of the Google searches of 900 U.S. adults
+- [Pew Research Center](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/), 2025 study of the Google searches of 900 U.S. adults
 - Washington University in St. Louis, 2026 study of 55,393 Google searches
 - Seer Interactive, 2026 research on AI Overview citations and organic clicks
-- Google Search Central, 2026 guide to generative AI features in Search
-- Aggarwal et al., "GEO: Generative Engine Optimization," KDD 2024 (arXiv)
-
-<!-- TODO (Mike): add links for each source above before publishing. They come from Chapter 6 of the second edition. Check wording against the frozen book. -->
+- [Google Search Central](https://developers.google.com/search/docs/appearance/ai-features), 2026 guide to generative AI features in Search
+- Aggarwal et al., ["GEO: Generative Engine Optimization,"](https://arxiv.org/abs/2311.09735) KDD 2024 (arXiv)

@@ -92,7 +92,5 @@ Teams that want to work through this together can do it in the measurement and K
 
 ## Sources
 
-- Business Transformation Through AI-Powered Marketing, second edition, Chapter 19, Measurement and Analytics
-- Google Analytics 4 documentation on attribution and key events
-
-<!-- TODO (Mike): confirm wording against the frozen book and add a link to the GA4 attribution post on marketingfieldguide.ai before publishing. -->
+- [Business Transformation Through AI-Powered Marketing](/books/business-transformation-ai-marketing), second edition, Chapter 19, Measurement and Analytics
+- [Google Analytics 4 documentation](https://support.google.com/analytics/answer/10596866) on attribution and key events

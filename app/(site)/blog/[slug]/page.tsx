@@ -22,11 +22,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-<<<<<<< HEAD
   const post = getPost((await params).slug)
-=======
-  const post = getPost(params.slug)
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
   if (!post) return { title: 'Post not found', robots: { index: false } }
   const url = `/blog/${post.slug}`
   const image = post.coverImage ?? '/images/og-default.jpg'
@@ -81,46 +77,12 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       {faq && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq).replace(/</g, '\\u003c') }} />}
-<<<<<<< HEAD
-=======
-
-      {/* Hero */}
-      <section className="bg-navy-900 text-white section">
-        <div className="container-site max-w-3xl">
-          {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {post.tags.map((tag) => (
-                <span key={tag} className="badge">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-snug">
-            {post.title}
-          </h1>
-          <div className="flex flex-wrap items-center gap-3 text-navy-400 text-sm">
-            <span className="font-medium text-navy-200">{post.author}</span>
-            <span>·</span>
-            <time dateTime={post.date}>{formatPostDate(post.date)}</time>
-            <span>·</span>
-            <span>{post.readingMinutes} min read</span>
-          </div>
-        </div>
-      </section>
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
 
       <section className="inner-hero"><div className="wrap article"><p className="eyebrow">{post.tags.join(' / ')}</p><h1 style={{fontSize:'clamp(42px,5vw,67px)'}}>{post.title}</h1><p className="small muted">{post.author} / <time dateTime={post.date}>{formatPostDate(post.date)}</time> / {post.readingMinutes} min read</p></div></section>
       {/* Content */}
-<<<<<<< HEAD
       <section className="section white">
         <div className="wrap article">
           <article className="post-body article-copy">
-=======
-      <section className="section bg-white">
-        <div className="container-site max-w-3xl">
-          <article className="post-body prose prose-lg prose-navy max-w-none">
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
             {post.format === 'md' && post.html ? (
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             ) : (
@@ -132,11 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Author box */}
           <aside className="mt-12 flex items-center gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-5" aria-label="About the author">
             <Image
-<<<<<<< HEAD
               src="/assets/mike-huber-portrait.jpg"
-=======
-              src="/images/Mike-Head-Shot-Self-Portrait.webp"
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
               alt="Mike Huber"
               width={64}
               height={64}
@@ -162,11 +120,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* End box: two choices */}
       <section className="section bg-gray-50">
-<<<<<<< HEAD
         <div className="wrap article">
-=======
-        <div className="container-site max-w-3xl">
->>>>>>> ceb7e94abb2a092f0c7d5ff3613819998bdb53bd
           <h2 className="font-heading text-2xl font-bold text-navy-900 mb-5 text-center">Where to go from here</h2>
           <div className="grid gap-5 md:grid-cols-2">
             <div className="bg-navy-900 rounded-2xl p-7 text-white flex flex-col">

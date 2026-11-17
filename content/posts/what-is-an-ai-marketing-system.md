@@ -99,6 +99,4 @@ If you'd like to build this with your team in the room, it's the closing module 
 
 ## Sources
 
-- Business Transformation Through AI-Powered Marketing, second edition, Chapter 25, Your AI Marketing System
-
-<!-- TODO (Mike): (1) confirm the half-day AI workshop reference matches how you plan to sell Chapter 25 (the brief says Part 2 of Field Guide 17 doubles as a half-day workshop). (2) The brief says to credit the LinkedIn post that inspired the "20 skills" idea; add credit if you want the 20-skills line to stay. (3) Check wording against the frozen book. -->
+- [Business Transformation Through AI-Powered Marketing](/books/business-transformation-ai-marketing), second edition, Chapter 25, Your AI Marketing System
