@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-export default async function ReadinessPage({ params }: { params: { token: string } }) {
-  const ref = await resolveToken(params.token)
+export default async function ReadinessPage({ params }: { params: Promise<{ token: string }> }) {
+  const ref = await resolveToken((await params).token)
   if (!ref) notFound()
   const a = ref.assessment
 
@@ -54,7 +54,7 @@ export default async function ReadinessPage({ params }: { params: { token: strin
       </section>
       <section className="section bg-gray-50">
         <div className="container-site max-w-4xl">
-          <ReadinessForm token={params.token} org={a.org} group={ref.kind} open={a.status === 'open'} />
+          <ReadinessForm token={(await params).token} org={a.org} group={ref.kind} open={a.status === 'open'} />
         </div>
       </section>
     </>

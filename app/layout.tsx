@@ -3,16 +3,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mike Huber | Digital Marketing Strategist, Speaker & Author',
+    default: 'Mike Huber | AI Marketing, Speaking & Advisory',
     template: '%s | Mike Huber',
   },
   description:
-    'Mike Huber is a seasoned digital marketing strategist, conference speaker, corporate trainer, and co-author of The Customer Journey. Helping organizations transform marketing through strategy, training, and content.',
+    'AI-powered marketing and business transformation with Mike Huber. Conference speaking, team workshops and advisory grounded in customer insight and human judgment.',
   openGraph: {
     type: 'website',
     url: 'https://mikehuber.com',
     siteName: 'Mike Huber',
-    images: [{ url: '/images/og-default.jpg' }],
+    images: [{ url: '/assets/mike-huber-speaking-wide.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',

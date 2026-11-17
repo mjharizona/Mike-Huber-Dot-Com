@@ -9,8 +9,8 @@ import { inviteText, links } from '@/lib/readinessEmail'
 
 export const dynamic = 'force-dynamic'
 
-export default async function ReadinessDetail({ params }: { params: { id: string } }) {
-  const a = await getAssessment(params.id)
+export default async function ReadinessDetail({ params }: { params: Promise<{ id: string }> }) {
+  const a = await getAssessment((await params).id)
   if (!a) notFound()
   const c = composite(await getResponses(a.id))
   let before = null

@@ -4,12 +4,14 @@ import { Resend } from 'resend'
 
 // Swap for a verified sending domain (e.g. "Mike Huber <hello@mikehuber.com>")
 // once mikehuber.com is verified in the Resend dashboard.
-const FROM_EMAIL = 'Mike Huber Website <onboarding@resend.dev>'
+const FROM_EMAIL = process.env.CONTACT_EMAIL_FROM || 'Mike Huber Website <onboarding@resend.dev>'
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { name, email, phone, company, interest, message } = body
+    const { name, email, phone, company, interest, message, website } = body
+    if (website) return NextResponse.json({ error: "Unable to submit this inquiry." }, { status: 400 })
+    if ([name, email, company ?? "", interest, message].some(v => typeof v !== "string") || name?.length > 120 || email?.length > 160 || company?.length > 180 || message?.length > 8000) return NextResponse.json({ error: "Invalid inquiry." }, { status: 400 })
 
     // Basic validation
     if (!name || !email || !interest || !message) {
@@ -48,17 +50,17 @@ export async function POST(req: NextRequest) {
         })
 
         if (error) {
-          console.error('Resend error:', error)
+          console.error('Contact email provider rejected delivery')
+          return NextResponse.json({ error: 'Email delivery failed. Please email Mike directly.' }, { status: 502 })
         }
       } catch (mailErr) {
         // Don't fail the whole request if email delivery fails — the lead is already saved
         // and viewable in the admin dashboard.
-        console.error('Contact form email notification failed:', mailErr)
+        console.error('Contact email delivery failed')
+        return NextResponse.json({ error: 'Email delivery failed. Please email Mike directly.' }, { status: 502 })
       }
     } else {
-      console.warn(
-        `RESEND_API_KEY or CONTACT_EMAIL_TO not set — skipping email notification for lead ${lead.id}.`
-      )
+      return NextResponse.json({ error: 'Contact delivery is not configured. Please email mike@mikehuber.com.' }, { status: 503 })
     }
     // ─────────────────────────────────────────────────────────────────
 

@@ -1,0 +1,54 @@
+[
+  {
+    "title": "6 Months vs. 6 Weeks",
+    "subtitle": "Marketing at the Speed of AI",
+    "abstract": "AI can shorten a first draft. The bigger opportunity is changing how a marketing team gets useful work out the door. Mike Huber compares the production of two editions of his marketing field guide, then shows how the same approach applies to a campaign: a clear brief, AI-assisted drafting, human review and a shared workflow. Attendees will work through a campaign example, calculate the time recovered after review and rework, and choose a first pilot. The session separates Mike\u2019s project experience from published research and gives managers a way to improve throughput without losing their team\u2019s judgment or voice.",
+    "outcomes": [
+      "Map a marketing workflow with explicit human review and approval.",
+      "Calculate net time recovered, including briefing, review and rework.",
+      "Define a 30-day pilot with an owner, quality standard and business measure."
+    ],
+    "track": "Next-Gen Operations & Infrastructure",
+    "audience": "Marketing managers and directors, with business owners and senior executives as a secondary audience.",
+    "format": "45 minutes including audience activity and 5 minutes of questions"
+  },
+  {
+    "title": "Just Because You Can",
+    "subtitle": "Choosing the AI Marketing Projects Worth Finishing",
+    "abstract": "AI makes a new marketing idea easy to start. It does not remove the cost of review, maintenance or a divided team. Mike Huber traces how a book update grew into an expanding collection of websites, tools and training products, until a trusted advisor asked what the work was actually meant to achieve. Using that story and a positioning decision from his brother\u2019s pool business, attendees will apply a project filter to their own backlog. They will define \u201cdone,\u201d estimate the commitment beyond the first build and decide what to stop, so useful AI experiments can become finished marketing work.",
+    "outcomes": [
+      "Write a measurable definition of done for an AI marketing project.",
+      "Estimate review, maintenance and opportunity costs before approving a build.",
+      "Use a project filter to make a documented go, test, defer or stop decision."
+    ],
+    "track": "Next-Gen Operations & Infrastructure",
+    "audience": "Marketing managers and directors, with business owners and senior executives as a secondary audience.",
+    "format": "45 minutes including audience activity and 5 minutes of questions"
+  },
+  {
+    "title": "Getting Found When AI Answers First",
+    "subtitle": "A Repeatable Visibility Audit for Marketing Teams",
+    "abstract": "When buyers receive an AI-generated answer, a website visit may never happen. Marketing teams need a disciplined way to see how their brand appears without treating a handful of prompts as a reliable ranking report. In this session, Mike Huber shows how to build a buyer-question set, record mentions and cited sources consistently, identify gaps in useful content and separate visibility signals from business outcomes. Attendees will practice with a clearly labeled example and leave with an audit protocol, a content-improvement brief and a 30-day test plan. The approach builds on search fundamentals and avoids promises of guaranteed AI citations.",
+    "outcomes": [
+      "Run a repeatable AI visibility audit with a fixed question set and documented conditions.",
+      "Turn observed answer and source gaps into evidence-backed content improvements.",
+      "Report sampled visibility, referral activity and qualified leads as separate measures."
+    ],
+    "track": "Brand Visibility",
+    "audience": "Marketing managers and directors, with business owners and senior executives as a secondary audience.",
+    "format": "45 minutes including audience activity and 5 minutes of questions"
+  },
+  {
+    "title": "One Customer Interview, a Month of Useful Content",
+    "subtitle": "An AI-Assisted Editorial Workflow That Keeps the Evidence",
+    "abstract": "Your customers already describe the problems your content should answer. The challenge is turning one conversation into useful material without flattening it into generic AI copy. Mike Huber demonstrates an editorial workflow that separates the transcript, approved evidence, interpretation and publication. Working through a clearly labeled fictional interview, attendees will build an evidence sheet, use it to draft an article and email, adapt approved ideas for social posts and plan a month of distribution. The session includes review standards and a practical measurement plan, so the output stays accurate, relevant and recognizably yours.",
+    "outcomes": [
+      "Create an evidence sheet that distinguishes approved quotes, facts and interpretation.",
+      "Use AI to draft and adapt content without adding unsupported customer claims.",
+      "Plan a month of distribution with human approval and buyer-response measures."
+    ],
+    "track": "Creativity, Differentiation & Cultural Relevance",
+    "audience": "Marketing managers and directors, with business owners and senior executives as a secondary audience.",
+    "format": "45 minutes including audience activity and 5 minutes of questions"
+  }
+]

@@ -1,19 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'mikehuber.com',
-      },
-    ],
-    // Allow local images from /public
-    unoptimized: false,
+  images: { remotePatterns: [{ protocol: 'https', hostname: 'mikehuber.com' }] },
+  // Keep scheduled posts available to Netlify's server functions when ISR regenerates a page.
+  outputFileTracingIncludes: {
+    '/blog': ['./content/posts/**/*'],
+    '/blog/[slug]': ['./content/posts/**/*'],
+    '/blog/rss.xml': ['./content/posts/**/*'],
+    '/sitemap.xml': ['./content/posts/**/*'],
   },
-  // Enable MDX
-  experimental: {
-    mdxRs: true,
-  },
-}
-
-export default nextConfig
+};
+export default nextConfig;
