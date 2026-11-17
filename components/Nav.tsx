@@ -5,6 +5,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
+// The free tools from the book live on marketingfieldguide.ai (Nov 10, 2026).
+const FREE_TOOLS = 'https://marketingfieldguide.ai/resources?utm_source=mikehuber.com&utm_medium=referral&utm_campaign=q1-2027&utm_content=nav'
+
 type NavItem =
   | { href: string; label: string; children?: undefined }
   | { label: string; href?: undefined; children: { href: string; label: string }[] }
@@ -24,6 +27,7 @@ const links: NavItem[] = [
   { href: '/photography', label: 'Photography' },
   { href: '/testimonials', label: 'Testimonials' },
   { href: '/audit', label: 'Free Audit' },
+  { href: FREE_TOOLS, label: 'Free Tools' },
   { href: '/contact', label: 'Contact' },
 ]
 
