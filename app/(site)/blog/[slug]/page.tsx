@@ -91,57 +91,40 @@ export default async function BlogPostPage({ params }: Props) {
           </article>
           <CopyCode />
 
-          {/* Author box */}
-          <aside className="mt-12 flex items-center gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-5" aria-label="About the author">
-            <Image
-              src="/assets/mike-huber-portrait.jpg"
-              alt="Mike Huber"
-              width={64}
-              height={64}
-              className="h-16 w-16 flex-none rounded-full object-cover"
-            />
-            <p className="text-sm leading-relaxed text-gray-600">
-              <Link href="/about" className="font-semibold text-navy-900 hover:underline">Mike Huber</Link> is a
-              digital marketing strategist, speaker and trainer, and co-author of{' '}
-              <a href={mfgUrl('/book', 'author-box')} className="font-semibold text-navy-700 underline">
-                Business Transformation Through AI-Powered Marketing
-              </a>.
+          <aside className="author-box" aria-label="About the author">
+            <Image src="/assets/mike-huber-portrait.jpg" alt="Mike Huber" width={64} height={64} />
+            <p style={{ margin: 0 }}>
+              <Link href="/about" className="text-link">Mike Huber</Link> is a digital marketing strategist, speaker and trainer, and co-author of{' '}
+              <a href={mfgUrl('/book', 'author-box')} className="text-link">Business Transformation Through AI-Powered Marketing</a>.
             </p>
           </aside>
-
-          {/* Back link */}
-          <div className="mt-10 pt-8 border-t border-gray-100">
-            <Link href="/blog" className="text-navy-700 font-semibold hover:text-navy-900 text-sm">
-              ← Back to Blog
-            </Link>
-          </div>
+          <p style={{ marginTop: 32 }}>
+            <Link href="/blog" className="text-link">← Back to the blog</Link>
+          </p>
         </div>
       </section>
 
-      {/* End box: two choices */}
-      <section className="section bg-gray-50">
+      <section className="section soft">
         <div className="wrap article">
-          <h2 className="font-heading text-2xl font-bold text-navy-900 mb-5 text-center">Where to go from here</h2>
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="bg-navy-900 rounded-2xl p-7 text-white flex flex-col">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold-400">Work with Mike</p>
-              <h3 className="font-heading text-xl font-bold text-white mt-2 mb-2">Want help putting this to work?</h3>
-              <p className="text-navy-300 text-sm mb-6">
-                Consulting, team training and speaking for businesses and marketing teams.
-              </p>
-              <Link href={post.cta} className="btn-gold mt-auto justify-center">
-                {ctaLabel(post)} →
+          <p className="eyebrow">Where to go from here</p>
+          <div className="endbox">
+            <div className="dark-box">
+              <p className="eyebrow light">Work with Mike</p>
+              <h3>Want help putting this to work?</h3>
+              <p>Consulting, team training and speaking for businesses and marketing teams.</p>
+              <Link href={post.cta} className="button bronze">
+                {ctaLabel(post)}<span className="arrow" aria-hidden="true">↗</span>
               </Link>
             </div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-7 flex flex-col">
-              <p className="text-xs font-semibold uppercase tracking-widest text-navy-500">Do it yourself</p>
-              <h3 className="font-heading text-xl font-bold text-navy-900 mt-2 mb-2">Try the free tools</h3>
-              <p className="text-gray-600 text-sm mb-6">
+            <div>
+              <p className="eyebrow">Do it yourself</p>
+              <h3>Try the free tools</h3>
+              <p>
                 Calculators, templates and AI prompts from the book, free at the Marketing Field Guide.
                 {post.toolName && <> Start with the {post.toolName}.</>}
               </p>
-              <a href={toolHref} className="btn-secondary mt-auto justify-center">
-                Try the free tools →
+              <a href={toolHref} className="text-link">
+                Try the free tools<span className="arrow" aria-hidden="true">↗</span>
               </a>
             </div>
           </div>

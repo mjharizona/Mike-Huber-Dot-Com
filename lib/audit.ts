@@ -3,7 +3,7 @@
 // browser-only or Node-only imports.
 
 export const BOOKING_URL = process.env.NEXT_PUBLIC_BOOKING_URL || '/book'
-export const BOOK_URL = '/content-marketing'
+export const BOOK_URL = '/books'
 export const FULL_AUDIT_URL = 'https://marketingfieldguide.ai'
 
 export type Discipline = {

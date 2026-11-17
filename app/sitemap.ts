@@ -6,7 +6,7 @@ import { getAllPosts } from '@/lib/posts'
 export const revalidate = 3600
 
 const SITE = 'https://mikehuber.com'
-const PAGES = ['', 'about', 'work-with-me', 'speaking', 'speaking/media-kit', 'workshops', 'frameworks', 'books/business-transformation-ai-marketing', 'training', 'content-marketing', 'website-packages', 'photography', 'testimonials', 'audit', 'contact', 'book', 'books', 'blog', 'privacy']
+const PAGES = ['', 'about', 'work-with-me', 'speaking', 'speaking/media-kit', 'workshops', 'frameworks', 'books/business-transformation-ai-marketing', 'training', 'website-packages', 'photography', 'testimonials', 'audit', 'contact', 'book', 'books', 'blog', 'privacy']
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts()

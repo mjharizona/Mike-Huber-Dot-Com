@@ -15,27 +15,26 @@ const steps = [
 export default function AuditPage() {
   return (
     <>
-      <section className="bg-navy-900 text-white section">
-        <div className="container-site max-w-4xl">
-          <span className="badge mb-4 inline-block">Free tool</span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-5">Where is your marketing leaking leads?</h1>
-          <p className="text-navy-200 text-xl leading-relaxed max-w-3xl">
-            A five-minute audit of your marketing and your website. You get a score for each of the ten core disciplines and AI,
-            an automatic scan of your site, and your top three fixes, each tied to a chapter of <em>Business Transformation</em>.
+      <section className="inner-hero">
+        <div className="wrap">
+          <p className="eyebrow">Free tool</p>
+          <h1>Where is your marketing leaking leads?</h1>
+          <p className="lead">
+            A five-minute audit of your marketing and your website. You get a score for each of the ten core disciplines and AI, an automatic scan of your site, and your top three fixes, each tied to a chapter of <em>Business Transformation</em>.
           </p>
-          <ol className="grid sm:grid-cols-3 gap-4 mt-8">
+          <div className="service-grid" style={{ marginTop: 40 }}>
             {steps.map(([t, d], i) => (
-              <li key={t} className="rounded-2xl bg-white/5 border border-white/10 p-4">
-                <div className="text-gold-400 text-sm font-semibold">Step {i + 1}</div>
-                <div className="font-bold text-white text-lg">{t}</div>
-                <div className="text-navy-200 text-sm mt-1">{d}</div>
-              </li>
+              <div className="service" key={t}>
+                <span className="number">STEP {i + 1}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
-      <section className="section bg-gray-50">
-        <div className="container-site max-w-4xl">
+      <section className="section soft">
+        <div className="wrap tool-shell">
           <AuditTool />
         </div>
       </section>

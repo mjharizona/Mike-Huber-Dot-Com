@@ -53,3 +53,41 @@
 .premium-site .article-copy td,.premium-site .article-copy th{border:1px solid var(--line);padding:12px}
 .premium-site .actions{margin-top:30px}
 @media(max-width:650px){.premium-site .article-copy{font-size:16px}.premium-site .post-list-title{font-size:26px}}
+
+/* Added Nov 17, 2026: shared pieces for pages moved to the new design */
+.premium-site .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.premium-site .gallery.wide{grid-template-columns:repeat(3,1fr)}
+.premium-site .gallery figure{margin:0;position:relative;overflow:hidden;background:var(--soft);aspect-ratio:1/1}
+.premium-site .gallery.wide figure{aspect-ratio:16/9}
+.premium-site .gallery img{width:100%;height:100%;object-fit:cover}
+.premium-site .chips{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.premium-site .chips li{border:1px solid var(--line);background:var(--white);padding:9px 16px;font-size:14px;line-height:1.4}
+.premium-site .section.dark .chips li{background:transparent;border-color:#546368;color:#e6e9e3}
+.premium-site .prose-page{max-width:760px}
+.premium-site .prose-page h2{font-size:clamp(26px,3vw,36px);margin-top:1.6em}
+.premium-site .prose-page ul{padding-left:1.2em}
+.premium-site .prose-page li{margin-bottom:.5em}
+.premium-site .tool-shell{max-width:920px}
+.premium-site .endbox{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+.premium-site .endbox>div{border-top:1px solid var(--line);padding-top:24px}
+.premium-site .endbox .dark-box{background:var(--ink);color:var(--paper);padding:32px;border:0}
+.premium-site .endbox .dark-box h3{color:var(--paper)}
+.premium-site .author-box{display:flex;gap:18px;align-items:center;border-top:1px solid var(--line);margin-top:48px;padding-top:24px;font-size:15px}
+.premium-site .author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none}
+@media(max-width:900px){.premium-site .gallery{grid-template-columns:repeat(2,1fr)}.premium-site .gallery.wide{grid-template-columns:1fr}.premium-site .endbox{grid-template-columns:1fr}}
+
+/* Audit and booking tools: recolor their older utility classes to the new palette */
+.premium-site .tool-shell{font-family:var(--sans)}
+.premium-site .tool-shell [class*="text-navy-9"],.premium-site .tool-shell [class*="text-navy-8"],.premium-site .tool-shell [class*="text-navy-7"],.premium-site .tool-shell [class*="text-navy-6"],.premium-site .tool-shell [class*="text-gray-9"],.premium-site .tool-shell [class*="text-gray-8"],.premium-site .tool-shell [class*="text-gray-7"]{color:var(--ink)}
+.premium-site .tool-shell [class*="text-gray-6"],.premium-site .tool-shell [class*="text-gray-5"],.premium-site .tool-shell [class*="text-gray-4"]{color:var(--muted)}
+.premium-site .tool-shell [class*="bg-navy-9"]{background:var(--ink);color:var(--paper)}
+.premium-site .tool-shell [class*="bg-navy-9"] [class*="text-"],.premium-site .tool-shell [class*="bg-navy-9"][class*="text-"]{color:#d9dfdc}
+.premium-site .tool-shell [class*="bg-navy-50"],.premium-site .tool-shell [class*="bg-gray-50"]{background:var(--soft)}
+.premium-site .tool-shell [class*="border-navy"],.premium-site .tool-shell [class*="border-gray"],.premium-site .tool-shell .card,.premium-site .tool-shell .input-field{border-color:var(--line)}
+.premium-site .tool-shell [class*="rounded"],.premium-site .tool-shell .card,.premium-site .tool-shell .input-field{border-radius:0}
+.premium-site .tool-shell .card{background:var(--white);box-shadow:none;border:1px solid var(--line)}
+.premium-site .tool-shell .btn-gold,.premium-site .tool-shell .btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--bronze);cursor:pointer}
+.premium-site .tool-shell .btn-gold{background:var(--bronze);color:#fff}
+.premium-site .tool-shell .btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
+.premium-site .tool-shell .input-field,.premium-site .tool-shell input,.premium-site .tool-shell select,.premium-site .tool-shell textarea{background:var(--white);color:var(--ink);border:1px solid var(--line);padding:12px 14px;font-size:16px}
+.premium-site .tool-shell [class*="gold"]:not(.btn-gold){color:var(--bronze)}
