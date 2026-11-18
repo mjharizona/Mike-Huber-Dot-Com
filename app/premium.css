@@ -91,3 +91,12 @@
 .premium-site .tool-shell .btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink)}
 .premium-site .tool-shell .input-field,.premium-site .tool-shell input,.premium-site .tool-shell select,.premium-site .tool-shell textarea{background:var(--white);color:var(--ink);border:1px solid var(--line);padding:12px 14px;font-size:16px}
 .premium-site .tool-shell [class*="gold"]:not(.btn-gold){color:var(--bronze)}
+
+/* Readability: service cards default to light-on-dark; use dark text on light sections */
+.premium-site .section.white .service,.premium-site .section.soft .service{border-top-color:var(--ink)}
+.premium-site .section.white .service p,.premium-site .section.soft .service p{color:#33454b;font-size:16px}
+.premium-site .section.white .service .number,.premium-site .section.soft .service .number{color:var(--bronze);font-weight:700}
+.premium-site .section.white .service h3,.premium-site .section.soft .service h3{color:var(--ink)}
+.premium-site .section.white .service strong,.premium-site .section.soft .service strong{color:var(--ink)}
+.premium-site .section.white .service .outcomes li,.premium-site .section.soft .service .outcomes li{color:#33454b}
+.premium-site .section.white .service .outcomes li span,.premium-site .section.soft .service .outcomes li span{color:var(--bronze)}
