@@ -91,7 +91,7 @@ export default function PrivacyPage() {
           <p>
             This site doesn&rsquo;t set tracking or advertising cookies. The only cookie it sets is a login cookie for the
             site&rsquo;s private admin area, which only I use. The booking calendar on the Book a Call page comes from
-            Koalendar and may set its own cookies under Koalendar&rsquo;s privacy policy.
+            Koalendar and may set its own cookies under Koalendar&rsquo;s privacy policy. When you dismiss the cookie notice, your browser stores a small note on your own device so the notice doesn&rsquo;t reappear. It isn&rsquo;t sent to me or used to track you.
           </p>
 
           <H>How long I keep it</H>
