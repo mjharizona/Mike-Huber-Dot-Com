@@ -30,6 +30,9 @@ Every week I look at websites for business owners, and every week I see the same
 
 A clever tagline isn't a value proposition. For my brother Dan's company, [Wild West Custom Pools](https://www.wildwestcustompools.com), we settled the message before anyone designed a page: "We only build 12 pools a year." It tells the right buyer exactly what kind of builder he is.
 
+![Wild West Custom Pools home page listing Austin, Round Rock, Pflugerville and Hutto above the headline “We only build twelve pools a year.”](/images/blog/wild-west-custom-pools-after.png)
+*Right above the headline, Wild West Custom Pools names the four cities it serves. Homeowners in Austin, Round Rock, Pflugerville and Hutto can tell at a glance they’re in the right place.*
+
 **Check it:** show your home page to someone who doesn't know your business for five seconds. Ask them what you do and who it's for.
 
 ## 2. Is there proof on every page?
