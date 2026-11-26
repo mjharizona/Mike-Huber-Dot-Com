@@ -25,6 +25,9 @@ Six months vs. six weeks. That's the headline, and it's real. But speed isn't th
 
 **It started small: one document, then a website, then a whole business.** On Friday, September 25, 2026, I got an email. The team that produces Boehringer Ingelheim's on-demand continuing-education courses wanted to publish a video of a talk I gave in Las Vegas, *Veterinarians and Video*. To push it live, they needed my current CV.
 
+![Veterinarians and Video course cover featuring Mike Huber's session on creating video content to attract new veterinary clients.](/images/blog/veterinarians-and-video-course.png)
+*The Veterinarians & Video course that prompted the request for my updated CV.*
+
 I hadn't updated it in a couple of years. So I gave Claude my old résumé, told it what I'd done since, and had a CV I was proud to send in less than an hour.
 
 Then the CV didn't match my website. So I rebuilt mikehuber.com, in under two hours.
