@@ -34,6 +34,25 @@ The raw material was strong. Dan is a hands-on owner and builder, with five year
 
 But his message didn't show any of that. His website was a WordPress template with a stock pool photo and the headline "Where We Build Your Visions." It worked. People could see he had an active business. But you could tell it was a template, and he described himself in words any competitor could use.
 
+## What changed on Dan's website?
+
+**The new homepage makes the position visible: twelve pools a year, with the owner involved every step of the way.** Here are the original homepage and the repositioned version.
+
+<div class="site-comparison" aria-label="Wild West Custom Pools homepage before and after repositioning">
+<figure class="site-comparison-card">
+<h3>Before · 2024 homepage</h3>
+<a class="site-comparison-image" href="/images/blog/wild-west-custom-pools-before-2024.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the original Wild West Custom Pools homepage screenshot at full size in a new tab"><img src="/images/blog/wild-west-custom-pools-before-2024.jpg" alt="Original Wild West Custom Pools homepage with a blue water background, Get Free Quote button and Where We Build Your Visions message." width="1522" height="1058" loading="lazy" decoding="async" /></a>
+<figcaption>The company name, a general promise and a free-quote button led the page. <a href="/images/blog/wild-west-custom-pools-before-2024.jpg" target="_blank" rel="noopener noreferrer">View before at full size ↗</a></figcaption>
+</figure>
+<figure class="site-comparison-card">
+<h3>After · repositioned homepage</h3>
+<a class="site-comparison-image" href="/images/blog/wild-west-custom-pools-after.png" target="_blank" rel="noopener noreferrer" aria-label="Open the repositioned Wild West Custom Pools homepage screenshot at full size in a new tab"><img src="/images/blog/wild-west-custom-pools-after.png" alt="Repositioned Wild West Custom Pools homepage with an Austin skyline and pool, the headline We only build twelve pools a year, and a Request a Consultation button." width="1337" height="1171" loading="lazy" decoding="async" /></a>
+<figcaption>The limited annual capacity and Dan's personal involvement lead the message, followed by a consultation invitation. <a href="/images/blog/wild-west-custom-pools-after.png" target="_blank" rel="noopener noreferrer">View after at full size ↗</a></figcaption>
+</figure>
+</div>
+
+The design supports the decision we made about the business. The headline tells buyers what makes Wild West different, and the supporting copy explains what that means for their project. These screenshots show the change in presentation and positioning; lead results are discussed below.
+
 ## How can AI help with competitor research?
 
 **AI can read how every competitor in your market positions itself, and what their customers complain about, far faster than you can.** The whole project ran through Claude in Cowork. It started with one prompt: the owners want to move from being a general pool builder to a boutique builder doing only 10 to 12 pools a year for high-net-worth clients. Look at the competitors and come up with a website that generates leads.
