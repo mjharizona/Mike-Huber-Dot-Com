@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="4" fill="#172a32"/><text x="32" y="43" text-anchor="middle" font-family="Georgia,serif" font-size="31" fill="#f4f1ea">MH</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Mike Huber monogram</title>
+  <rect width="64" height="64" rx="8" fill="#172a32"/>
+  <g fill="#f4f1ea">
+  <polygon points="7,17 15,17 22,31 29,17 37,17 37,19 34,19 34,40 37,40 37,42 26,42 26,40 29,40 29,24 21,40 20,40 12,24 12,40 15,40 15,42 7,42 7,40 10,40 10,19 7,19"/>
+  <polygon points="38,17 47,17 47,19 45,19 45,28 51,28 51,19 49,19 49,17 58,17 58,19 56,19 56,40 58,40 58,42 49,42 49,40 51,40 51,31 45,31 45,40 47,40 47,42 38,42 38,40 40,40 40,19 38,19"/>
+  </g>
+  <rect x="25" y="49" width="15" height="3" fill="#8c603c"/>
+</svg>
